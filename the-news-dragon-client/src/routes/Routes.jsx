@@ -9,6 +9,8 @@ import News from '../layouts/News';
 import Login from '../layouts/Login';
 import SignUp from '../layouts/SignUp';
 import Detail from '../pages/Home/Detail/Detail';
+import PrivateRoutes from './PrivateRoutes';
+import Terms from '../pages/Shared/Terms/Terms';
 
 const router = createBrowserRouter([
     {
@@ -37,7 +39,7 @@ const router = createBrowserRouter([
     },
     {
         path: 'news',
-        element: <News/>,
+        element: <PrivateRoutes><News/></PrivateRoutes>,
         children: [
             {
                 path: ':id',
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
     {
         path: 'signup',
         element: <SignUp/>
+    },
+    {
+        path: 'terms',
+        element: <Terms/>
     }
 ]);
 
