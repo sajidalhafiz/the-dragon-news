@@ -24,7 +24,6 @@ const SignUpForm = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                form.reset();
                 navigate('/login');
             })
             .catch(error => console.error(error))
