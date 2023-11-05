@@ -4,9 +4,10 @@ import moment from 'moment';
 import Marquee from "react-fast-marquee";
 import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import TopNav from '../TopNav/TopNav';
 const Header = () => {
     return (
-        <Container>
+        <Container className='mt-5'>
             <div className='text-center'>
                 <img src={logo} alt="" />
                 <p><small>Journalism Without Fear or Favour</small></p>
@@ -17,24 +18,6 @@ const Header = () => {
                 <Marquee className='text-danger mx-5 ' speed={100} pauseOnHover={true} >
                     I can be a React component, multiple React components, or just some text...
                 </Marquee>
-            </div>
-            <div>
-                <Navbar collapseOnSelect expand="lg" className="bg-white my-3 " bg="light" data-bs-theme="light">
-                    <Container>
-                        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="mx-auto">
-                                <Nav.Link><Link className='text-decoration-none text-secondary' to="/">Home</Link></Nav.Link>
-                                <Nav.Link><Link className='text-decoration-none text-secondary' to="/about">About</Link></Nav.Link>
-                                <Nav.Link><Link className='text-decoration-none text-secondary' to="/career">Career</Link></Nav.Link>
-                            </Nav>
-                            <Nav>
-                                <Nav.Link href="">Profile</Nav.Link>
-                                <Button variant="dark">Login</Button>
-                            </Nav>
-                        </Navbar.Collapse>
-                    </Container>
-                </Navbar>
             </div>
         </Container>
     );

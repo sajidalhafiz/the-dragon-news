@@ -6,6 +6,8 @@ import Category from '../pages/Home/Category/Category';
 import About from '../pages/About/About/About';
 import Career from '../pages/Career/Career/Career';
 import News from '../layouts/News';
+import Login from '../layouts/Login';
+import SignUp from '../layouts/SignUp';
 import Detail from '../pages/Home/Detail/Detail';
 
 const router = createBrowserRouter([
@@ -15,15 +17,8 @@ const router = createBrowserRouter([
         children: [
             {
                 path: '/',
-                element: <Home/>
-            },
-            {
-                path: 'about',
-                element: <About/>
-            },
-            {
-                path: 'career',
-                element: <Career/>
+                element: <Home/>,
+                loader: () => fetch('http://localhost:5000/news')
             },
             {
                 path: 'categories/:id',
@@ -31,6 +26,14 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
             }
         ]
+    },
+    {
+        path: 'about',
+        element: <About/>
+    },
+    {
+        path: 'career',
+        element: <Career/>
     },
     {
         path: 'news',
@@ -42,6 +45,14 @@ const router = createBrowserRouter([
                 loader: ({params}) => fetch(`http://localhost:5000/news/${params.id}`)
             }
         ]
+    },
+    {
+        path: 'login',
+        element: <Login/>
+    },
+    {
+        path: 'signup',
+        element: <SignUp/>
     }
 ]);
 

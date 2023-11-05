@@ -7,6 +7,7 @@ import RightNav from '../pages/Shared/RightNav/RightNav';
 import EditorsInsite from '../pages/Home/EditorsInsite/EditorsInsite';
 
 const News = () => {
+    
     return (
         <>
             <Header />
